@@ -2,6 +2,7 @@ package com.qualcomm.location;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.TextView;
 
 public class QLocationActivity extends Activity {
@@ -16,7 +17,7 @@ public class QLocationActivity extends Activity {
     }
     
     /** Called when button is clicked. */
-    public void onClick() {
+    public void onClick(View v) {
     		
     }
 }
