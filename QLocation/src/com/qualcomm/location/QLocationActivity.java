@@ -25,10 +25,10 @@ public class QLocationActivity extends Activity {
     public void onClick(View v) {
     		Log.d(TAG, "onClicked");
     		
-//    		List<String> providers = QLocationLib.getAllProviders();
-//    		for(String provider: providers) {
-//    			output.append("\n" + provider);
-//    		}
+    		List<String> providers = QLocationLib.getAllProviders();
+    		for(String provider: providers) {
+    			output.append("\n" + provider);
+    		}
     		
     		Location location = QLocationLib.getLastKnownLocation("GPS2");
     		output.append("\n"+location.toString());
