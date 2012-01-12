@@ -2,7 +2,10 @@
 
 JNIEXPORT jobjectArray JNICALL Java_com_qualcomm_location_QLocationLib__1getAllProviders
   (JNIEnv *env, jclass clazz) {
-	return 0;
+	jclass type = (*env)->FindClass(env, "Ljava/lang/String");
+	jstring provider = (*env)->NewStringUTF(env, "GPS2");
+	jobjectArray ret = (*env)->NewObjectArray(env, 1, type, provider);
+	return ret;
 }
 
 JNIEXPORT jdoubleArray JNICALL Java_com_qualcomm_location_QLocationLib__1getLastKnownLocation
