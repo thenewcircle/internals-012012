@@ -3,5 +3,7 @@
 
     <string name="hello">Hello World, QLocationActivity!</string>
     <string name="app_name">QLocation</string>
+    <string name="go">Go</string>
+    <string name="output">Output</string>
 
 </resources>
