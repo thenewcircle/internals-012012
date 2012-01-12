@@ -1,0 +1,18 @@
+
+= How Wifi Framework Works
+
+.Comparison between Android Wifi framework and QWifi demo
+[options="header"]
+|===============================================================================
+|Android Wifi                                                     |QWifi
+|WifiInfo.java                                                    |QWifiClient: QWifiClientActivity.java
+|/frameworks/base/wifi/java/com/android/server/WifiManager.java   |QWifiClient: QWifiManager.java
+|*Binder calls*|*Binder calls*
+|/frameworks/base/wifi/java/com/android/server/IWifiManager.aidl  |QWifiCommon: IQWifiService.aidl
+|/frameworks/base/wifi/java/com/android/server/WifiInfo.java      |QWifiInfo.java
+|/frameworks/base/services/java/com/android/server/WifiService.java    |QWifiService: IQWifiServiceImpl.java
+|/frameworks/base/wifi/java/com/android/server/WifiNative.java    |QWifiService: QWifiLib.java
+|*JNI calls*|*JNI calls*
+|/frameworks/base/core/jni/android_net_wifi_Wifi.cpp              |QWifiService: qcom_wifiservice_QWifiLib.c
+|/hardware/libhardware_legacy/wifi/wifi.c                        |QWifiService: qcom_wifiservice_lib.c
+|===============================================================================

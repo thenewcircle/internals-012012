@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="qcom.wifiservice"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk android:minSdkVersion="14" />
+
+    <permission
+        android:name="qcom.permission.ACCESS_QCOMWIFI_SERVICE"
+        android:permissionGroup="android.permission-group.NETWORK"
+        android:protectionLevel="signature" >
+    </permission>
+
+    <application>
+        <service
+            android:name=".QWifiService"
+            android:permission="qcom.permission.ACCESS_QCOMWIFI_SERVICE" >
+            <intent-filter>
+                <action android:name="qcom.wificommon.IQWifiService" />
+            </intent-filter>
+        </service>
+    </application>
+
+</manifest>

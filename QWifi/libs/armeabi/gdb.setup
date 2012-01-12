@@ -1,0 +1,2 @@
+set solib-search-path /Users/marko/workspaces/android-internals-chennai-dec2011/QWifi/obj/local/armeabi
+directory /Users/marko/tools/ndk/platforms/android-3/arch-arm/usr/include /Users/marko/workspaces/android-internals-chennai-dec2011/QWifi/jni /Users/marko/tools/ndk/sources/cxx-stl/system
