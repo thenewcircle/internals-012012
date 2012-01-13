@@ -3,7 +3,7 @@ package com.qualcomm.locationservice;
 import java.util.Arrays;
 import java.util.List;
 
-import android.location.Location;
+import com.qualcomm.locationcommon.QLocation;
 
 /** Wraps native calls to the C library. */
 public class QLocationLib {
@@ -16,8 +16,8 @@ public class QLocationLib {
 	private static native String[] _getAllProviders();
 	
 	/** Returns last known location for given provider. */
-	public static Location getLastKnownLocation(String provider) {
-		Location location = new Location(provider);
+	public static QLocation getLastKnownLocation(String provider) {
+		QLocation location = new QLocation();
 		double[] locationData = _getLastKnownLocation(provider);
 		location.setLatitude(locationData[0]);
 		location.setLongitude(locationData[1]);

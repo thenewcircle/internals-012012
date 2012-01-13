@@ -9,6 +9,7 @@ import android.os.RemoteException;
 import android.util.Log;
 
 import com.qualcomm.locationcommon.IQLocationService;
+import com.qualcomm.locationcommon.QLocation;
 
 public class QLocationService extends Service {
 	static final String TAG = "QLocationService";
@@ -26,6 +27,12 @@ public class QLocationService extends Service {
 		public List<String> getAllProviders() throws RemoteException {
 			Log.d(TAG, "getAllProviders");
 			return QLocationLib.getAllProviders();
+		}
+
+		@Override
+		public QLocation getLastKnownLocation(String provider)
+				throws RemoteException {
+			return QLocationLib.getLastKnownLocation(provider);
 		}
 
 	}

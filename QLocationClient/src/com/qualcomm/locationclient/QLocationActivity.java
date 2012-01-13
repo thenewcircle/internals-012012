@@ -15,6 +15,8 @@ import android.widget.TextView;
 
 import com.qualcomm.location.R;
 import com.qualcomm.locationcommon.IQLocationService;
+import com.qualcomm.locationcommon.QLocation;
+import com.qualcomm.locationservice.QLocationLib;
 
 public class QLocationActivity extends Activity {
 	static final String TAG = "QLocation";
@@ -52,8 +54,13 @@ public class QLocationActivity extends Activity {
 			Log.e(TAG, "Failed to call getAllProviders()", e);
 		}
 
-		// Location location = QLocationLib.getLastKnownLocation("GPS2");
-		// output.append("\n"+location.toString());
+		QLocation location;
+		try {
+			location = service.getLastKnownLocation("GPS2");
+			output.append("\n"+location.toString());
+		} catch (RemoteException e) {
+			Log.e(TAG, "Failed to call getLastKnownLocation()", e);
+		}
 	}
 
 	class QServiceConnection implements ServiceConnection {
